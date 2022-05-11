@@ -93,9 +93,9 @@ __POINT DIFFERENCE__ was removed, as that metric is directly based on points, wh
 Below, the highly correlated variables in the dataset are dropped. 
 
 
-##HEATMAP
 
-![view](https://github.com/n0vah917/dsc-phase-2-project-v2-3/blob/main/images/HEATMAP.png)
+
+![view](https://github.com/n0vah917/dsc-phase-3-project-v2-3/blob/main/images/HEATMAP.png)
 
 
 
@@ -109,7 +109,7 @@ The initial model performs relatively well on the test data, seen from the predi
 The corresponding confusion matrices, seen below, re-interprets the information above in clean visuals, showing how the model classifies the test/train data using the logistic regression classifier trhough counts of true/false positives/negatives.
 
 
-##CM1
+![view](https://github.com/n0vah917/dsc-phase-3-project-v2-3/blob/main/images/CM1.png)
 
 Seen from both plotted matrices and the calculated residuals (showing the same information summarized), the amount of accurately predicted counts is relatively proportional between the train and test data. The model appears to be slightly overfit on the training data, seen by the slightly higher % of residual value counts within the training data (90.7%). This implies that further application of parameters would help maintain overall model performance between train/test data while reducing overfitting.
 
@@ -122,7 +122,7 @@ A Decision Tree classifier is applied to the dataset, in order to get the perspe
 The second model has dropped to ~.74 accuracy in predicting game outcomes. This may seem like a drastic change which invalidates the model, but as explained in later sections, an accuracy close to .75 is expected when predicting NBA games. The training data scores clearly show the model is perfectly fit on the training data, with an accuracy score of 1. Parameter application in later model iterations will help reduce the overfitting.
 
 
-##CM2
+![view](https://github.com/n0vah917/dsc-phase-3-project-v2-3/blob/main/images/CM2.png)
 
 
 The matrices/residuals show a slightly less accurate model overall on the test data compared to the first model, when using a decision tree classifier.
@@ -144,9 +144,10 @@ For the test data, recall was far higher than precision for win predictions, whi
 For the training data, similar trends can be seen within precision, recall, and f1-score for win/loss predictions, which makes the model performance relatively similar between train/test data. This means that the overfitting issue seen in the prior decision tree model has been fully mitigated.
 
 
-##CM3
+![view](https://github.com/n0vah917/dsc-phase-3-project-v2-3/blob/main/images/CM3.png)
 
-##FI1
+![view](https://github.com/n0vah917/dsc-phase-3-project-v2-3/blob/main/images/FI1.png)
+
 
 
 Seen above, the most impactful features in the model involve playmaking on the offensive end, and overall metrics that contribute to a team's final score. Since the 3 point shot offers the highest potential for scoring (4 points, if fouled on the made shot attempt) it is unsurprising that 3PT% is directly equated to win percentage. Similarly, 2 PT field goals (2PT%) are the standard/easiest route of scoring for most teams in the NBA. It seems that assists and rebounds are highlighted to a degree as well. 
@@ -158,10 +159,10 @@ Seen above, the most impactful features in the model involve playmaking on the o
 Next, the RandomForestClassifier will be tested for efficacy comparison amongst the other models. This model will be interesting to evaluate against, as it contains multiple Decision Trees in order to eliminate bias amongst individual trees. Each individual decision tree is based on a different subset of data so the resulting output will be a composite of several decisions. The nature of having multiple trees assists with reducing overfitting within the eventual output. The plan is to use now use GridSearchCV to identify optimal hyperparameters within the forest, for a more optimized method in replicating the same overfitting-reduction results in the prior model.
 
 
-##CM4
+![view](https://github.com/n0vah917/dsc-phase-3-project-v2-3/blob/main/images/CM4.png)
 
 
-##FI2
+![view](https://github.com/n0vah917/dsc-phase-3-project-v2-3/blob/main/images/FI2.png)
 
 Similarly to the initial Decision Tree model, the Random Forest model highlights the same features of importance within determining game wins: 3PT%, 2PT%, assists, and rebounds. 
 
@@ -176,10 +177,10 @@ Finally, the XGBoost model will be used as a final comparison to our prior model
 
 
 
-##CM5
+![view](https://github.com/n0vah917/dsc-phase-3-project-v2-3/blob/main/images/CM5.png)
 
 
-##FI3
+![view](https://github.com/n0vah917/dsc-phase-3-project-v2-3/blob/main/images/FI3.png)
 
 
 
@@ -265,11 +266,12 @@ On a player-by-player basis, the tension between James Harden and Giannis Antent
 The slight against Giannis undoubtedly fueled his 44-point performance against Harden in a Nets/Bucks matchup on March 30, 2021. Giannis was seen to address Harden’s comment in that post-game interview saying, “It's good because I'm changing the narrative. I don't want to be the guy only that dunks and runs. I can make a three.”. 
 
 ...
-├── data                                   #folder containing data used for analysis
+├── images #folder containing images used for readme
 ├── README.md
-├── Predicting NBA Games.pdf    #pdf of presentation
-├── jupyternotebook                              #pdf of jupyter notebook
-└── Phase 2 Project.ipynb                                #jupyter notebook containing all relevant summaries/analyses
+├── Predicting NBA Outcomes.pdf    #pdf of presentation
+├── 20192022NBAGAMES3.csv #data used for analysis
+├── jupyter notebook.pdf #pdf of jupyter notebook
+└── Phase 3 Project - Predicting NBA Game Outcomes.ipynb #jupyter notebook containing all relevant summaries/analyses
 
 
 
